@@ -1,0 +1,7 @@
+.list>* {
+    display: flex;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}

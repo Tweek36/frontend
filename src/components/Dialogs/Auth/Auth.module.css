@@ -1,0 +1,59 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputs>* {
+    margin-top: 10px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons>* {
+    margin-top: 10px;
+    background-color: #88bb33;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1rem;
+    margin: 10px 10px 0 0;
+}
+
+.close:focus-visible>svg, .close:hover>svg {
+    transition: 0.5s;
+    fill: #8d0000;
+}
+
+.close:not(:focus-visible):not(:hover)>svg> {
+    transition: 0.5s;
+    fill: #000;
+}
+
+.questions {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.questions>a:hover {
+    color: #33bba4;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.errors {
+    margin-top: 10px;
+}

@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.submint {
+    margin-top: 10px;
+    background-color: #88bb33;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}

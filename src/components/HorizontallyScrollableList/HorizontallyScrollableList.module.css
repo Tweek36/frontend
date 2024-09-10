@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.overflowShadowLeft {
+    box-shadow: inset 20px 0 15px -20px rgba(255,255,255,0.66);
+    
+}
+
+.overflowShadowRight {
+    box-shadow: inset -20px 0 15px -20px rgba(255,255,255,0.66);
+}
+
+.overflowShadowLeft.overflowShadowRight {
+    box-shadow: inset 20px 0 15px -20px rgba(255,255,255,0.66), inset -20px 0 15px -20px rgba(255,255,255,0.66);
+}

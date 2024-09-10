@@ -1,0 +1,30 @@
+.input_conteiner {
+    position: relative;
+}
+
+.max_length {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.input_wrapper {
+    margin-top: 8px;
+}
+
+.input {
+    width: 100%;
+    padding: 0 20px;
+    border-radius: 8px;
+    height: 50px;
+    background-color: #1e1e1e;
+}
+
+.input.inversed {
+    background-color: #323232;
+}
+
+.invalid {
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 5px #ff0000;
+}

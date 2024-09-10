@@ -1,0 +1,47 @@
+.item {
+    display: flex;
+    position: relative;
+}
+
+.video {
+    flex: 1;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.video img {
+    cursor: pointer;
+}
+
+.info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.close {
+    cursor: pointer !important;
+    width: 15px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+}
+
+.close:focus-visible>svg>*,
+.close:hover>svg>* {
+    transition: 0.5s;
+    fill: #8d0000;
+}
+
+.close:not(:focus-visible):not(:hover)>svg> {
+    transition: 0.5s;
+    fill: #000;
+}
