@@ -8,25 +8,7 @@ import HorizontallyScrollableList from "@/components/HorizontallyScrollableList/
 import { API_URL, unauthenticatedFetch } from "@/api/base";
 import CompetitionCard from "@/components/CompetitionCard/CompetitionCard";
 import { useRouter } from "next/navigation";
-
-interface CompetitionResponseSchema {
-  id: string;
-  user_id: string;
-  title: string;
-  description: string;
-  category: string;
-  image: string;
-  published: boolean;
-}
-
-interface PaginatedResponse<T> {
-  data: T[];
-  max_per_page: number;
-  page: number;
-  total: number;
-}
-
-type CompetitionPaginatedResponseSchema = PaginatedResponse<CompetitionResponseSchema>;
+import { CompetitionPaginatedResponseSchema } from "@/types/competition";
 
 
 const Main: NextPage = () => {

@@ -4,6 +4,7 @@ import LabledInput from '../LabledInput/LabledInput';
 import LabledTextarea from '../LabledTextarea/LabledTextarea';
 import { useUser } from '@/contexts/UserContext';
 import DeleteIcon from '@/local/svg/close.svg';
+import YouTubeThumbnail from '../YouTubeThumbnail/YouTubeThumbnail';
 
 interface ListItemProps extends React.HTMLAttributes<HTMLDivElement> {
     index: number
@@ -201,7 +202,7 @@ const ListItem: React.FC<ListItemProps> = ({ lastIndex, listItemsValidationError
             <div className={styles.video}>
                 <LabledInput inversed label='URL:' placeholder='URL' value={videoId} onChange={handleVideoIdChange} invalid={!isVideoIdValid} />
                 {isVideoIdValid &&
-                    <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} alt="" onClick={e => onImgageClick(e, videoId)} />
+                    <YouTubeThumbnail videoId={videoId} width={200} height={113} alt="" onClick={(e) => onImgageClick(e, videoId)} />
                 }
             </div>
             <div className={styles.info}>

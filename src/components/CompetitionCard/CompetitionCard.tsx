@@ -59,7 +59,9 @@ const CompetitionCard: React.FC<CompetitionCardProps> = ({ title, image, competi
     return (
         <div className={styles.card} onClick={e => onClick(competitionId, e)}>
             <h3>{title}</h3>
-            {image ? (<img src={image} />) : <img src={API_URL + "/image/default.png"} />}
+            <div className={styles.image}>
+                {image ? (<img src={image} />) : <img src={API_URL + "/image/default.png"} />}
+            </div>
             <p ref={descriptionRef} className={`${styles.description} ${isOverflowed ? styles.overflowShadow : ""}`}>{description}</p>
         </div>
     )

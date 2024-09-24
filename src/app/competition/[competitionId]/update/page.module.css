@@ -49,10 +49,7 @@
 .inputs {
     display: flex;
     flex-direction: column;
-}
-
-.inputs>*:not(:last-child) {
-    margin-bottom: 15px;
+    gap: 15px;
 }
 
 .submint {
@@ -124,6 +121,7 @@
 .unsinchronized_items {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .unsinchronized_item {
@@ -142,11 +140,6 @@
 .unsinchronized_item button:hover,
 .unsinchronized_item button:focus-visible {
     background-color: #33bba4;
-}
-
-.unsinchronized_item:not(:last-child)>*,
-.invalid_items:not(:last-child)>* {
-    margin-bottom: 5px;
 }
 
 .warning_content h3 {

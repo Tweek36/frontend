@@ -1,0 +1,53 @@
+.item {
+    width: 160px;
+    align-content: center;
+}
+
+.item img {
+    max-width: 160px;
+    max-height: 90px;
+    width: 160px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.choice {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.stage {
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: flex;
+    gap: 45px;
+}
+
+.item svg {
+    z-index: 100;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e;
+    padding: 5px 10px;
+    z-index: 10000;
+    width: 250px;
+    visibility: hidden;
+}

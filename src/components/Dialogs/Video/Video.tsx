@@ -7,7 +7,7 @@ interface VideoProps extends React.HTMLAttributes<HTMLDivElement> {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Video: React.FC<VideoProps> = ({ setIsOpen, videoId, isOpen, ...props }) => {
+const Video: React.FC<VideoProps> = ({ setIsOpen, videoId, isOpen }) => {
     const handleDialogClick = (e: React.MouseEvent<HTMLDialogElement>) => {
         if (e.target === e.currentTarget) {
             setIsOpen(false);
@@ -15,7 +15,7 @@ const Video: React.FC<VideoProps> = ({ setIsOpen, videoId, isOpen, ...props }) =
     };
 
     return (
-        <dialog open={isOpen} onMouseUp={handleDialogClick} className={styles.video} >
+        <dialog open={isOpen} onClick={handleDialogClick} className={styles.video} >
             <iframe src={`https://www.youtube.com/embed/${videoId}`}></iframe>
         </dialog>
     )

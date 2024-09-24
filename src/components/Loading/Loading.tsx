@@ -2,7 +2,7 @@ import styles from "./Loading.module.css";
 import React from "react";
 
 
-export const Loading: React.FC = (props: React.HTMLAttributes<HTMLDivElement>) => {
+const Loading: React.FC = (props: React.HTMLAttributes<HTMLDivElement>) => {
     return (
         <div
             className={styles.loader_wrapper} {...props}
@@ -11,3 +11,5 @@ export const Loading: React.FC = (props: React.HTMLAttributes<HTMLDivElement>) =
         </div>
     );
 };
+
+export default Loading

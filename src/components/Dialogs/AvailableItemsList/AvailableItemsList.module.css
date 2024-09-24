@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 90vw;
+    width: 800px;
+    height: 90vh;
+    overflow-y: auto;
+    background-color: #282828;
+    padding: 15px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+}
+
+.item img {
+    flex: 1;
+}
+
+.title {
+    flex: 5;
+}

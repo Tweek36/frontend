@@ -20,7 +20,7 @@ const Registration: React.FC<RegistrationProps> = ({ setIsOpen, setAuthMode }) =
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         try {
-            const response = await unauthenticatedFetch("/register/", { method: "POST", body: formData });
+            const response = await unauthenticatedFetch("/auth/register/", { method: "POST", body: formData });
             if (response.ok) {
                 setCheck(true)
             }

@@ -124,7 +124,7 @@ body {
 
 main {
   max-width: 1980px;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
 }
 

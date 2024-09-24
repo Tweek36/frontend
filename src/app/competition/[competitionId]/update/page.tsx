@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import CompetitionCard from "@/components/CompetitionCard/CompetitionCard";
 import LabledInput from "@/components/LabledInput/LabledInput";
 import LabledTextarea from "@/components/LabledTextarea/LabledTextarea";
-import { useParams, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useUser } from "@/contexts/UserContext";
 import { API_URL } from "@/api/base";
 import ItemsList from "@/components/ItemsList/ItemsList";
@@ -15,11 +15,14 @@ import WarningIcon from "@/local/svg/warning.svg";
 import Link from "next/link";
 import Video from "@/components/Dialogs/Video/Video";
 import ListItem from "@/components/ListItem/ListItem";
-import Error from 'next/error';
 
-const Update: NextPage = () => {
+interface CompetitionProps {
+  params: { competitionId: string }
+  searchParams: { [key: string]: string }
+}
+
+const Update: NextPage<CompetitionProps> = ({ params }) => {
   const router = useRouter();
-  const params = useParams()
   const { authenticatedFetch } = useUser();
 
   const [title, setTitle] = useState('');
@@ -55,7 +58,7 @@ const Update: NextPage = () => {
         key={0}
         index={0}
         lastIndex={lastIndex}
-        competitionId={String(params.competitionId)}
+        competitionId={params.competitionId}
         onImgageClick={(e, videoId) => { openVideo(videoId) }}
         setItems={setItems}
         setListItemsUnsinchronizedErrors={setListItemsUnsinchronizedErrors}
@@ -144,7 +147,7 @@ const Update: NextPage = () => {
   const handlePlaylistAdd = async () => {
     const formData = new FormData();
     formData.append("playlist_id", playlist);
-    formData.append("competition_id", String(params.competitionId));
+    formData.append("competition_id", params.competitionId);
     const response = await authenticatedFetch(`/youtube/add/playlist/`, { method: "POST", body: formData });
     if (response.ok) {
       const data: { id: string, title: string, description: string, videoId: string }[] = await response.json();
@@ -157,7 +160,7 @@ const Update: NextPage = () => {
               key={lastIndex.current}
               index={lastIndex.current}
               lastIndex={lastIndex}
-              competitionId={String(params.competitionId)}
+              competitionId={params.competitionId}
               itemId={item.id}
               videoId={item.videoId}
               description={item.description}
@@ -174,7 +177,7 @@ const Update: NextPage = () => {
             key={lastIndex.current}
             index={lastIndex.current}
             lastIndex={lastIndex}
-            competitionId={String(params.competitionId)}
+            competitionId={params.competitionId}
             setListItemsUnsinchronizedErrors={setListItemsUnsinchronizedErrors}
             setListItemsValidationErrors={setListItemsValidationErrors}
             listItemsValidationErrorsLastIndex={listItemsValidationErrorsLastIndex}
@@ -285,7 +288,7 @@ const Update: NextPage = () => {
             title={title}
             image={image}
             description={description}
-            competitionId={String(params.competitionId)}
+            competitionId={params.competitionId}
             onClick={(competitionId, e) => { router.push(`/competition/${competitionId}`) }} />
         </div>
       </div>
@@ -315,7 +318,7 @@ const Update: NextPage = () => {
       <div className={styles.list}>
         <ItemsList
           className={styles.list}
-          competitionId={String(params.competitionId)}
+          competitionId={params.competitionId}
           setListItemsUnsinchronizedErrors={setListItemsUnsinchronizedErrors}
           setListItemsValidationErrors={setListItemsValidationErrors}
           listItemsUnsinchronizedErrors={listItemsUnsinchronizedErrors}

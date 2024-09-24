@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.container details summary {
+    cursor: pointer;
+    text-align: center;
+}
+
+.container details summary:focus-visible,
+.container details summary:hover {
+    outline: none;
+    text-decoration: underline;
+    color: #33bba4;
+}
+
+.container button {
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #88bb33;
+    color: #1e1e1e;
+}
+
+.container {
+    padding-bottom: 200px;
+}
+
+.container button[disabled] {
+    background-color: #8d8d8d !important;
+    cursor: default;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Loading } from "@/components/Loading/Loading";
+import Loading from "@/components/Loading/Loading";
 import { useUser } from "@/contexts/UserContext";
 import { NextPage } from "next";
 import { useSearchParams } from "next/navigation";
@@ -27,7 +27,7 @@ const ConfirmRegistration: NextPage = () => {
         }
         const formData = new FormData();
         formData.append("token", token);
-        const response = await authenticatedFetch('/auth/reset_password/check/', {method: "POST", body: formData});
+        const response = await authenticatedFetch('/auth/reset_password/check/', { method: "POST", body: formData });
         const data = await response.json();
         if (response.ok) {
             setGlobalError(null);
@@ -50,7 +50,7 @@ const ConfirmRegistration: NextPage = () => {
         }
         const formData = new FormData(e.currentTarget);
         formData.append("token", token)
-        const response = await authenticatedFetch('/auth/reset_password/', {method: "POST", body: formData});
+        const response = await authenticatedFetch('/auth/reset_password/', { method: "POST", body: formData });
         const data = await response.json();
         if (response.ok) {
             setRefreshToken(data.refresh_token);

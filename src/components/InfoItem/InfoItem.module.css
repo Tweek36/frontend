@@ -1,0 +1,15 @@
+.infoItem {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    gap: 10px;
+
+}
+
+.infoItem img {
+    max-width: 200px;
+    min-width: 200px;
+    cursor: pointer;
+}
